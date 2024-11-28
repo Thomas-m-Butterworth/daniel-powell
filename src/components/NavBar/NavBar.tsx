@@ -29,6 +29,18 @@ const PageLink = ({ href, text }: PageLinkType) => {
         </Link>
     )
 }
+const ExternalPageLink = ({ href, text }: PageLinkType) => {
+    return (
+        <a 
+        href={href} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        style={{ textDecoration: 'none' }}
+    >
+            <NavItem>{text}</NavItem>
+        </a>
+    )
+}
 
 export const NavBar = () => {
     return (
@@ -41,7 +53,7 @@ export const NavBar = () => {
                 <NavLinks>
                     <PageLink href="/" text="Home" />
                     <PageLink href="/scripts" text="Scripts" />
-                    <PageLink href="/blog" text="Blog" />
+                    <ExternalPageLink href="https://danielpowellcomedy.substack.com/" text="Blog" />
                     <PageLink href="/contact" text="Contact" />
                 </NavLinks>
             </NavContent>
