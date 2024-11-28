@@ -1,4 +1,4 @@
-if (!URL.canParse(process.env.WORDPRESS_API_URL)) {
+if (!URL.canParse(process.env.NEXT_PUBLIC_WORDPRESS_API_URL)) {
   throw new Error(`
     Please provide a valid WordPress instance URL.
     Add to your environment variables WORDPRESS_API_URL.
@@ -6,8 +6,10 @@ if (!URL.canParse(process.env.WORDPRESS_API_URL)) {
 }
 
 const { protocol, hostname, port, pathname } = new URL(
-  process.env.WORDPRESS_API_URL
+  process.env.NEXT_PUBLIC_WORDPRESS_API_URL
 )
+
+console.log({protocol}, {hostname}, {port}, {pathname})
 
 /** @type {import('next').NextConfig} */
 module.exports = {
@@ -17,7 +19,13 @@ module.exports = {
         protocol: protocol.slice(0, -1),
         hostname,
         port,
-        pathname: `${pathname}/**`,
+        pathname: '**',
+      },
+      {
+        protocol: protocol.slice(0, -1),
+        hostname: '2.gravatar.com',
+        port,
+        pathname: '**',
       },
     ],
   },
