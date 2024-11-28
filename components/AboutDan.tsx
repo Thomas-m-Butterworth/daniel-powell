@@ -64,7 +64,7 @@ export const AboutDan = () => {
         {<title>Daniel Powell - About Dan</title>}
       </Head>
       <TitleAndImage>
-        <ContentImage src={danMic.src} height="80vh" position="-20px -40px" />
+        <ContentImage src={danMic.src} height="80vh" position="-20px -40px" alt="An illustration by Robert Maltby of Dan holding a microphone" />
         <TitleText>{"About Dan"}</TitleText>
       </TitleAndImage>
       <p>{loremIpsumTwo}</p>

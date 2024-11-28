@@ -34,7 +34,7 @@ export const SiteSubtitle = styled.p`
   margin-bottom: 0.75rem;
 `;
 
-export const NavLinks = styled.div`
+export const NavLinks = styled.ul`
   background: none;
   display: flex;
   flex-wrap: wrap;
@@ -53,7 +53,7 @@ export const NavItem = styled.li`
   font-family: ${({ theme }) => theme.typography.fonts.genericHeader};
 
   color: ${({ theme }) => theme.colors.textInverted};
-  margin-right: 15px;
+  margin-right: 24px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   &:hover {
     cursor: pointer;
