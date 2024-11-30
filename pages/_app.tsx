@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const theme = useTheme();
   return (
     <ThemeProvider theme={theme}>
-      <AppContainer>
+      <AppContainer aria-hidden={false}>
         <UniversalStyle />
         <TextStyles />
         <WordpressStyles />
