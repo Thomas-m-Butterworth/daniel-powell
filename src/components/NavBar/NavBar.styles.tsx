@@ -13,7 +13,7 @@ export const Nav = styled.nav`
   z-index: 100;
   position: relative;
 
-  ${({ theme }) => theme.media.lg} {
+  ${({ theme }) => theme.media.md} {
     font-size: ${({ theme }) => theme.typography.scale.h5};
   }
 `;

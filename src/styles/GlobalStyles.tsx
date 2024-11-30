@@ -29,7 +29,7 @@ export const PageContent = styled(Container)`
   margin-top: 1rem;
   margin-bottom: 1rem;
   ${({ theme }) => theme.media.md} {
-    width: 80%;
+    width: 90%;
   }
 `;
 

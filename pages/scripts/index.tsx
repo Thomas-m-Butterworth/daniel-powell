@@ -7,7 +7,7 @@ import danSaussageRoll from '@images/danSaussageRoll.png'
 import sparkyBinEater from '@images/sparkyBinEater.png'
 import sparkyBumstick from '@images/sparkyBumstick.png'
 import sparkyPintGlass from '@images/sparkyPintGlass.png'
-import { ListAndImage, ScriptLinkDescription, ScriptLinkItem, ScriptListContainer, SideImage } from '@components/Scripts'
+import { ListAndImage, ScriptContainer, ScriptLinkDescription, ScriptLinkItem, ScriptListContainer, SideImage } from '@components/Scripts'
 import Head from 'next/head'
 
 const images = [
@@ -28,7 +28,7 @@ export default function Scripts({ allPosts: { edges }, preview }) {
       <ScriptListContainer>
       {edges.map((script, index) => {
         return (
-          <div style={{display: "flex", flexDirection: "row"}}>
+          <ScriptContainer>
             <SideImage src={images[index % images.length]} />
               <div key={script.node.slug}>
                 <Link href={`/scripts/${script.node.slug}`}>
@@ -36,7 +36,7 @@ export default function Scripts({ allPosts: { edges }, preview }) {
                 </Link>
                 <ScriptLinkDescription dangerouslySetInnerHTML={{__html: script.node.excerpt}} />
               </div>
-            </div>
+            </ScriptContainer>
           )
       })}
       </ScriptListContainer>

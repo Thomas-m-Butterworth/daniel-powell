@@ -23,5 +23,5 @@ export const ScriptLinkItem = styled.li`
 `
 
 export const ScriptLinkDescription = styled.div`
-  margin-bottom: ${({ theme }) => theme.spacing.md};
+  text-align: justify;
 `
