@@ -240,7 +240,7 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
 }
 `;
 
-export const TitleText = styled.h2`
+export const TitleText =  styled.h2`
 color: ${({ theme }) => theme.colors.text};
 font-family: ${({ theme }) => theme.typography.fonts.genericHeader};
 margin-top: ${({ theme }) => theme.spacing.lg};
@@ -249,10 +249,26 @@ margin-top: ${({ theme }) => theme.spacing.lg};
 export const QuoteText = styled.h4`
   color: ${({ theme }) => theme.colors.text};
   font-family: ${({ theme }) => theme.typography.fonts.scriptFont};
-  margin-top: 0.5rem;
-  letter-spacing: -1px;
+  margin-bottom: ${({ theme }) => theme.spacing.xs};
+  letter-spacing: 0.5px;
   line-height: 20px;
+
+  ${({ theme }) => theme.media.md} {
+    font-size: ${({ theme }) => theme.typography.scale.h5};
+    letter-spacing: 0.35px;
+  }
 `;
+
+export const AccoladeText = styled.p`
+  color: ${({ theme }) => theme.colors.text};
+  font-family: ${({ theme }) => theme.typography.fonts.primaryFont};
+  letter-spacing: 0.15px;
+  
+  ${({ theme }) => theme.media.md} {
+    font-size: ${({ theme }) => theme.typography.scale.helperText};
+  }
+`;
+
 export const GigYear = styled.h5`
   color: ${({ theme }) => theme.colors.text};
   font-family: ${({ theme }) => theme.typography.fonts.genericHeader};
