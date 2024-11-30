@@ -6,7 +6,6 @@ const CarouselWrapper = styled.div`
   align-content: center;
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px 0;
   position: relative;
   overflow: hidden;
 `;
@@ -22,7 +21,6 @@ const Slide = styled.div`
   text-align: center;
   margin-top: auto;
   margin-bottom: auto;
-  padding: 20px;
 `;
 
 const ArrowButton = styled.button`

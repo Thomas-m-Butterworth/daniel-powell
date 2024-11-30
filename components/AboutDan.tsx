@@ -10,7 +10,6 @@ Nisl suscipit adipiscing bibendum est. Amet est placerat in egestas erat imperdi
 
 const TitleText = styled.h2`
   text-transform: uppercase;
-  text-align: right;
 
   ${({ theme }) => theme.media.md} {
     font-size: ${({ theme }) => theme.typography.scale.h3};
@@ -33,27 +32,31 @@ const TitleAndImage = styled.div`
   }
 `;
 
-const ContentImage = styled.img<{ height?: string; position?: string }>`
+const CopyAndTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
+
+const ContentImage = styled.img<{ height?: string; width?: string, position?: string }>`
   width: 250px;
   height: ${(props) => (props.height ? props.height : "100%")};
+  width: ${(props) => (props.width ? props.width : "100%")};
   object-fit: cover;
-  object-position: ${(props) => (props.position ? props.position : "0")};
+  object-position: ${(props) => (props.position ? props.position : null)};
 
   ${({ theme }) => theme.media.lg} {
-    width: 150px;
-    object-position: -20px -20px;
-    height: 50px;
+    width: 100%;
+    height: 100px;
+    object-position: 0px -120px;
     transform: scale(1.8);
   }
   ${({ theme }) => theme.media.sm} {
-    width: 75px;
-    object-position: 0 0;
-    transform: scale(2.5);
+    width: 100%;
+    object-position: 0px -30px;
   }
   ${({ theme }) => theme.media.xs} {
-    width: 50px;
-    object-position: 0 5px;
-    transform: scale(3.3);
+    width: 100%;
   }
 `;
 
@@ -64,10 +67,12 @@ export const AboutDan = () => {
         {<title>Daniel Powell - About Dan</title>}
       </Head>
       <TitleAndImage>
-        <ContentImage src={danMic.src} height="80vh" position="-20px -40px" alt="An illustration by Robert Maltby of Dan holding a microphone" />
-        <TitleText>{"About Dan"}</TitleText>
+        <ContentImage src={danMic.src} height="60vh" width="10vw" alt="An illustration by Robert Maltby of Dan holding a microphone" />
       </TitleAndImage>
-      <p>{loremIpsumTwo}</p>
+      <CopyAndTitle>
+        <TitleText>{"About Dan"}</TitleText>
+        <p>{loremIpsumTwo}</p>
+      </CopyAndTitle>
     </ImageAndCopy>
   );
 };
