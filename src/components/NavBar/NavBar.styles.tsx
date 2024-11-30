@@ -39,7 +39,7 @@ export const NavLinks = styled.ul`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   text-transform: lowercase;
   font-family: ${({ theme }) => theme.typography.fonts.genericHeader};
 
@@ -52,10 +52,9 @@ export const NavItem = styled.li`
   height: 30px;
   text-decoration: none;
   font-family: ${({ theme }) => theme.typography.fonts.genericHeader};
-
   color: ${({ theme }) => theme.colors.textInverted};
-  margin-right: 18px;
-  margin-left: 18px;
+  margin-right: 8px;
+  margin-left: 8px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   &:hover {
     cursor: pointer;
@@ -69,3 +68,9 @@ export const NavItem = styled.li`
     color: ${({ theme }) => theme.colors.textInverted};
   }
 `;
+
+export const NavLinkContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`

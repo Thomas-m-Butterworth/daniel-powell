@@ -52,7 +52,7 @@ export const ContentImage = styled.img<{ height?: string; position?: string }>`
   object-position: ${(props) => (props.position ? props.position : "0")};
   transition: transform 0.3s ease;
 
-${({ theme }) => theme.media.lg} 
+${({ theme }) => theme.media.lg} {
     object-position: 0 25%;
     height: 50px;
     width: 33%;
@@ -241,7 +241,7 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
 
 export const TitleText = styled.h2`
 color: ${({ theme }) => theme.colors.text};
-font-family: ${({ theme }) => theme.typography.fonts.genericHeader}
+font-family: ${({ theme }) => theme.typography.fonts.genericHeader};
 margin-top: ${({ theme }) => theme.spacing.lg};
 `;
 

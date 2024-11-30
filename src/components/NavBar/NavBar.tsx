@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Nav, NavItem, NavLinks, SiteSubtitle, SiteTitle } from "./NavBar.styles"
+import { Nav, NavItem, NavLinkContainer, NavLinks, SiteSubtitle, SiteTitle } from "./NavBar.styles"
 import { DarkModeToggle } from "@components/DarkModeToggle"
 import styled from "styled-components"
 
@@ -58,12 +58,14 @@ export const NavBar = () => {
                     <SiteTitle>Daniel Powell</SiteTitle>
                     <SiteSubtitle>writer | comedian | twat</SiteSubtitle>
                 </Link>
+                <NavLinkContainer>
                 <NavLinks>
                     <PageLink href="/" text="Home" />
                     <PageLink href="/scripts" text="Scripts" />
                     <ExternalPageLink href="https://danielpowellcomedy.substack.com/" text="Blog" />
                     <PageLink href="/contact" text="Contact" />
                 </NavLinks>
+                </NavLinkContainer>
             </NavContent>
             <ToggleWrapper>
                 <DarkModeToggle />

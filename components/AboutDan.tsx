@@ -36,6 +36,7 @@ const CopyAndTitle = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: justify;
 `
 
 const ContentImage = styled.img<{ height?: string; width?: string, position?: string }>`
@@ -67,7 +68,7 @@ export const AboutDan = () => {
         {<title>Daniel Powell - About Dan</title>}
       </Head>
       <TitleAndImage>
-        <ContentImage src={danMic.src} height="60vh" width="10vw" alt="An illustration by Robert Maltby of Dan holding a microphone" />
+        <ContentImage src={danMic.src} width="10vw" alt="An illustration by Robert Maltby of Dan holding a microphone" />
       </TitleAndImage>
       <CopyAndTitle>
         <TitleText>{"About Dan"}</TitleText>
