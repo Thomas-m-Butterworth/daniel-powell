@@ -23,7 +23,7 @@ export const NavContent = styled.div`
 `;
 
 const PageLinkContainer = styled.div`
-    height: 24px;
+    height: 32px;
 `
 
 const PageLink = ({ href, text }: PageLinkType) => {

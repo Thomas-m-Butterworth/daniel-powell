@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const Nav = styled.nav`
   display: flex;
-  width: 100%%;
+  width: 100%;
   flex-direction: column;
   font-size: ${({ theme }) => theme.typography.scale.h4};
   position: sticky;
   top: 0;
   background: ${({ theme }) => theme.colors.nav.bg};
   padding-top: 25px;
-  padding-bottom: 25px;
+  padding-bottom: 10px;
   z-index: 100;
   position: relative;
 
