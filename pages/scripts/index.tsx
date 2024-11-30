@@ -1,47 +1,29 @@
 import { GetStaticProps } from 'next'
 import { getAllScripts } from '../../lib/api'
-import { PageContent } from '../../src/styles/GlobalStyles'
-import Link from 'next/link'
-import danOverwhelmed from '@images/danOverwhelmed.png'
-import danSaussageRoll from '@images/danSaussageRoll.png'
-import sparkyBinEater from '@images/sparkyBinEater.png'
-import sparkyBumstick from '@images/sparkyBumstick.png'
-import sparkyPintGlass from '@images/sparkyPintGlass.png'
-import { ListAndImage, ScriptContainer, ScriptLinkDescription, ScriptLinkItem, ScriptListContainer, SideImage } from '@components/Scripts'
-import Head from 'next/head'
+import { ListAndImage, ScriptContainer } from '@components/Scripts'
+import { CopyContainer, PageContainer } from '@components'
+import { copy, meta } from '@lang'
+import { images } from './images'
 
-const images = [
-  sparkyBinEater.src,
-  danOverwhelmed.src,
-  danSaussageRoll.src,
-  sparkyBumstick.src,
-  sparkyPintGlass.src
-];
-
-export default function Scripts({ allPosts: { edges }, preview }) {
+export default function Scripts({ allPosts: { edges } }) {
+  console.log('scripts', {edges})
   return (
-      <PageContent>
-        <Head>
-          {<title>Daniel Powell - Scripts</title>}
-        </Head>
-        <ListAndImage>
-      <ScriptListContainer>
-      {edges.map((script, index) => {
-        return (
-          <ScriptContainer>
-            <SideImage src={images[index % images.length]} />
-              <div key={script.node.slug}>
-                <Link href={`/scripts/${script.node.slug}`}>
-                  <ScriptLinkItem>{script.node.title}</ScriptLinkItem>
-                </Link>
-                <ScriptLinkDescription dangerouslySetInnerHTML={{__html: script.node.excerpt}} />
-              </div>
-            </ScriptContainer>
-          )
-      })}
-      </ScriptListContainer>
+    <PageContainer head={meta.pages.scripts.head}>
+      <CopyContainer title={copy.scripts.title} copy={copy.scripts.copy} />
+      <ListAndImage>
+          {edges.map((script, index) => (
+              <ScriptContainer
+                imageSrc={images[index % images.length].src}
+                imageAlt={images[index % images.length].alt}
+                key={script.node.slug}
+                title={script.node.title}
+                content={script.node.excerpt}
+                href={`/scripts/${script.node.slug}`}
+              />
+            )
+          )}
       </ListAndImage>
-      </PageContent>
+    </PageContainer>
   )
 }
 

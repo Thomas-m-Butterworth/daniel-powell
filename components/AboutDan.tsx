@@ -1,14 +1,11 @@
 import { ImageAndCopy } from "@styles/GlobalStyles";
 import danMic from "@images/danMic.png";
 import styled from "styled-components";
-import Head from "next/head";
+import { copy } from "@lang";
+import { CopyContainer } from "@components";
+import Image from "next/image";
 
-const loremIpsumTwo = `
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam vel quam elementum pulvinar etiam. Dignissim convallis aenean et tortor at risus viverra adipiscing. Aliquam nulla facilisi cras fermentum odio eu. Cursus turpis massa tincidunt dui ut ornare lectus sit amet. Enim nulla aliquet porttitor lacus luctus accumsan tortor. Tempor orci dapibus ultrices in iaculis nunc. Tellus mauris a diam maecenas sed enim ut. Mollis aliquam ut porttitor leo a diam sollicitudin. Posuere urna nec tincidunt praesent semper feugiat nibh sed. Orci sagittis eu volutpat odio facilisis mauris sit amet massa. Cursus risus at ultrices mi. Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Duis at consectetur lorem donec. Vulputate mi sit amet mauris commodo. Est ante in nibh mauris cursus mattis molestie.
-
-Nisl suscipit adipiscing bibendum est. Amet est placerat in egestas erat imperdiet. Tellus pellentesque eu tincidunt tortor aliquam nulla. Sed cras ornare arcu dui vivamus. Felis eget velit aliquet sagittis id consectetur. Lacus laoreet non curabitur gravida arcu ac tortor dignissim convallis. Nullam ac tortor vitae purus faucibus. Aliquet nec ullamcorper sit amet. Mauris pellentesque pulvinar pellentesque habitant. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec.`;
-
-const TitleText = styled.h2`
+export const CopyTitleText = styled.h2`
   text-transform: uppercase;
 
   ${({ theme }) => theme.media.md} {
@@ -16,7 +13,7 @@ const TitleText = styled.h2`
   }
 `;
 
-const TitleAndImage = styled.div`
+const ImageContainer = styled.div`
   width: 250px;
   display: flex;
   flex-direction: column-reverse;
@@ -32,11 +29,12 @@ const TitleAndImage = styled.div`
   }
 `;
 
-const CopyAndTitle = styled.div`
+export const CopyAndTitle = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: justify;
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
 `
 
 const ContentImage = styled.img<{ height?: string; width?: string, position?: string }>`
@@ -64,16 +62,10 @@ const ContentImage = styled.img<{ height?: string; width?: string, position?: st
 export const AboutDan = () => {
   return (
     <ImageAndCopy>
-      <Head>
-        {<title>Daniel Powell - About Dan</title>}
-      </Head>
-      <TitleAndImage>
+      <ImageContainer>
         <ContentImage src={danMic.src} width="10vw" alt="An illustration by Robert Maltby of Dan holding a microphone" />
-      </TitleAndImage>
-      <CopyAndTitle>
-        <TitleText>{"About Dan"}</TitleText>
-        <p>{loremIpsumTwo}</p>
-      </CopyAndTitle>
+      </ImageContainer>
+      <CopyContainer title={copy.home.title} copy={copy.test.loremIpsum} />
     </ImageAndCopy>
   );
 };

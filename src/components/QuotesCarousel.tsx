@@ -1,3 +1,4 @@
+import { quotes } from "@lang";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
@@ -5,7 +6,6 @@ const CarouselWrapper = styled.div`
   width: 100%;
   align-content: center;
   max-width: 800px;
-  margin: 0 auto;
   position: relative;
   overflow: hidden;
 `;
@@ -65,59 +65,15 @@ const Dot = styled.span<{ active: boolean }>`
   cursor: pointer;
 `;
 
-const quoteData = [
-  {
-    accolade: "Semi Finalist",
-    source: "So You Think You're Funny? 2022",
-  },
-  {
-    accolade: "'Best Jokes of the Fringe'",
-    source: "The Telegraph (2023)",
-  },
-  {
-    accolade:
-      '"Full of self depreciating humour, got the crowd in great spirits"',
-    source: "Hull Daily Mail",
-  },
-  {
-    accolade: '"I would happily watch Daniel ONE MORE TIME!"',
-    source: "Viggo Venn, Britain's Got Talent Winner 2023",
-  },
-  {
-    accolade: '"Dead good"',
-    source: "Maisie Adam",
-  },
-  {
-    accolade: "Best Short Script",
-    source: "Shepperton Screenwriting Festival 2021",
-  },
-  {
-    accolade: "Best Short Script",
-    source: "CKF International Film Festival 2021",
-  },
-  {
-    accolade: "Best Short Script",
-    source: "Feel The Reel International Film Festival 2021",
-  },
-  {
-    accolade: "Best Short Script",
-    source: "WikiScreenplay 2022",
-  },
-  {
-    accolade: "Writer (Additional Material)",
-    source: "Breaking The News (BBC)",
-  },
-];
-
 const QuotesCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % quoteData.length);
+    setCurrentSlide((prev) => (prev + 1) % quotes.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + quoteData.length) % quoteData.length);
+    setCurrentSlide((prev) => (prev - 1 + quotes.length) % quotes.length);
   };
 
   useEffect(() => {
@@ -131,7 +87,7 @@ const QuotesCarousel = () => {
         &lt;
       </ArrowButton>
       <SlideContainer offset={-currentSlide * 100}>
-        {quoteData.map((item, index) => (
+        {quotes.map((item, index) => (
           <Slide key={index}>
             <h3>{item.accolade}</h3>
             <p>{item.source}</p>
@@ -142,7 +98,7 @@ const QuotesCarousel = () => {
         &gt;
       </ArrowButton>
       <DotContainer>
-        {quoteData.map((_, index) => (
+        {quotes.map((_, index) => (
           <Dot
             key={index}
             active={currentSlide === index}

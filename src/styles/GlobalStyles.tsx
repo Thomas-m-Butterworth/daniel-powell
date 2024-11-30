@@ -62,7 +62,7 @@ ${({ theme }) => theme.media.lg} {
 export const Footer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 3rem;
+  max-height: 3rem;
   width: 100%;
   flex: 1;
   padding-left: 2rem;

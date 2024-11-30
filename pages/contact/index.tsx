@@ -3,6 +3,8 @@ import { PageContent } from '../../src/styles/GlobalStyles'
 
 import nodemailer from "nodemailer";
 import { useState } from 'react';
+import { PageContainer } from '@components';
+import { meta } from '@lang';
 
 export default function Contact() {
   const [formData, setFormData] = useState({name: '', email: '', message: ''})
@@ -38,10 +40,7 @@ export default function Contact() {
   };
 
   return (
-    <PageContent>
-      <Head>
-        <title>Contact Dan</title>
-      </Head>
+    <PageContainer head={meta.pages.contact.head}>
       <h1>Contact Dan</h1>
 
       <form onSubmit={handleSubmit}>
@@ -81,6 +80,6 @@ export default function Contact() {
       </form>
 
       <p>{status}</p>
-    </PageContent>
+    </PageContainer>
   );
 }

@@ -8,10 +8,9 @@ export const Nav = styled.nav`
   position: sticky;
   top: 0;
   background: ${({ theme }) => theme.colors.nav.bg};
-  padding-top: 25px;
-  padding-bottom: 10px;
+  padding-top: ${({ theme }) => theme.spacing.md};
+  padding-bottom: ${({ theme }) => theme.spacing.sm};
   z-index: 100;
-  position: relative;
 
   ${({ theme }) => theme.media.md} {
     font-size: ${({ theme }) => theme.typography.scale.h5};
@@ -27,7 +26,7 @@ export const SiteTitle = styled.h3`
 export const SiteSubtitle = styled.p`
   color: ${({ theme }) => theme.colors.textInverted};
   font-size: ${({ theme }) => theme.typography.scale.paragraph};
-  margin-bottom: 0.75rem;
+  margin-bottom: ${({ theme }) => theme.spacing.md};
 `;
 
 export const NavLinks = styled.ul`
@@ -50,8 +49,8 @@ export const NavItem = styled.li`
   text-decoration: none;
   font-family: ${({ theme }) => theme.typography.fonts.genericHeader};
   color: ${({ theme }) => theme.colors.textInverted};
-  margin-right: 8px;
-  margin-left: 8px;
+  margin-right: ${({ theme }) => theme.spacing.sm};
+  margin-left: ${({ theme }) => theme.spacing.sm};
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   &:hover {
     cursor: pointer;

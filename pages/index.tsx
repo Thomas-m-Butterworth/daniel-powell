@@ -1,16 +1,17 @@
 
 import { GetStaticProps } from 'next'
 import { getAllPostsForHome } from '../lib/api'
-import { PageContent } from '../src/styles/GlobalStyles'
 import QuotesCarousel from '@components/QuotesCarousel'
 import { AboutDan } from '../components/AboutDan'
+import { PageContainer } from '@components'
+import { meta } from '@lang'
 
 export default function Index({ allPosts: { edges }, preview }) {
   return (
-    <PageContent>
+    <PageContainer head={meta.pages.home.head}>
       <AboutDan />
       <QuotesCarousel />
-    </PageContent>
+    </PageContainer>
   )
 }
 
