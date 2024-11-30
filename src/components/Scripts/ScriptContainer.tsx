@@ -19,14 +19,21 @@ const ScriptContainerDiv = styled.div`
     margin-bottom: ${({ theme }) => theme.spacing.lg};
 `;
 
+const ScriptDescription = styled.div`
+        display: flex;
+        flex-direction: column;
+`
+
 export const ScriptContainer = ({imageSrc, imageAlt, key, href, title, content}: ScriptContainerProps) => {
     return (
         <ScriptContainerDiv key={key}>
             <SideImage src={imageSrc} alt={imageAlt} />
-            <Link href={href}>
-                <ScriptLinkItem>{title}</ScriptLinkItem>
-            </Link>
+            <ScriptDescription>
+                <Link href={href}>
+                    <ScriptLinkItem>{title}</ScriptLinkItem>
+                </Link>
             <ScriptLinkDescription dangerouslySetInnerHTML={{__html: content}} />
+            </ScriptDescription>
         </ScriptContainerDiv>
     )
 }

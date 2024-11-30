@@ -2,5 +2,5 @@ import styled from "styled-components";
 
 export const ListAndImage = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 `
