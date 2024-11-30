@@ -21,6 +21,8 @@ const Slide = styled.div`
   text-align: center;
   margin-top: auto;
   margin-bottom: auto;
+  padding-left: 35px;
+  padding-right: 35px;
 `;
 
 const ArrowButton = styled.button`
@@ -30,7 +32,7 @@ const ArrowButton = styled.button`
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  padding: 10px;
+  padding: 8px;
   cursor: pointer;
   z-index: 1;
 
@@ -50,7 +52,7 @@ const ArrowButton = styled.button`
 const DotContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 8px;
 `;
 
 const Dot = styled.span<{ active: boolean }>`
