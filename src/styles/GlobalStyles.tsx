@@ -68,6 +68,7 @@ export const Footer = styled.div`
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
   justify-content: center;
   align-items: start;
   background: ${({ theme }) => theme.colors.footer.bg};

@@ -16,10 +16,6 @@ export const Nav = styled.nav`
   ${({ theme }) => theme.media.lg} {
     font-size: ${({ theme }) => theme.typography.scale.h5};
   }
-  ${({ theme }) => theme.media.md} {
-    font-size: ${({ theme }) => theme.typography.scale.paragraph};
-    text-align: center;
-  }
 `;
 
 export const SiteTitle = styled.h3`
@@ -42,7 +38,8 @@ export const NavLinks = styled.ul`
   justify-content: center;
   text-transform: lowercase;
   font-family: ${({ theme }) => theme.typography.fonts.genericHeader};
-
+  margin: 0;
+  padding: 0;
   background: none;
   z-index: 95;
 `;
