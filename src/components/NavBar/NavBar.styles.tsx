@@ -49,6 +49,7 @@ export const NavLinks = styled.ul`
 
 export const NavItem = styled.li`
   list-style: none;
+  height: 30px;
   text-decoration: none;
   font-family: ${({ theme }) => theme.typography.fonts.genericHeader};
 

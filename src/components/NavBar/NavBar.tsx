@@ -29,7 +29,7 @@ const PageLinkContainer = styled.div`
 const PageLink = ({ href, text }: PageLinkType) => {
     return (
         <PageLinkContainer>
-        <Link href={href} style={{ textDecoration: 'none' }}>
+        <Link href={href} style={{ textDecoration: 'none', display: 'block' }}>
             <NavItem>{text}</NavItem>
         </Link>
         </PageLinkContainer>
