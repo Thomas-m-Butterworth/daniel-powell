@@ -1,5 +1,5 @@
 import React from "react";
-import { CopyAndTitle, CopyTitleText } from "../../components/AboutDan";
+import { CopyAndTitle, CopyTitleText } from "./AboutDan";
 
 interface CopyContainerProps {
     title: string;

@@ -18,6 +18,8 @@ declare module "styled-components" {
       accent: string;
       underline: string;
       disabled: string;
+      yellow: string;
+      orange: string;
     };
     breakpoints: {
       xs: string;
@@ -68,6 +70,7 @@ declare module "styled-components" {
       small: string;
       medium: string;
       large: string;
+      xLarge: string;
       round: string;
     };
     spacing: {

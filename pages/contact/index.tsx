@@ -3,8 +3,8 @@ import { PageContent } from '../../src/styles/GlobalStyles'
 
 import nodemailer from "nodemailer";
 import { useState } from 'react';
-import { PageContainer } from '@components';
-import { meta } from '@lang';
+import { ContactForm, CopyContainer, PageContainer } from '@components';
+import { copy, meta } from '@lang';
 
 export default function Contact() {
   const [formData, setFormData] = useState({name: '', email: '', message: ''})
@@ -41,45 +41,12 @@ export default function Contact() {
 
   return (
     <PageContainer head={meta.pages.contact.head}>
-      <h1>Contact Dan</h1>
-
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="message">Message:</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          ></textarea>
-        </div>
-        <button type="submit">Send Message</button>
-      </form>
-
-      <p>{status}</p>
+      <CopyContainer title={copy.contact.title} copy={copy.contact.copy} />
+      <ContactForm 
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        formData={formData}
+      />
     </PageContainer>
   );
 }

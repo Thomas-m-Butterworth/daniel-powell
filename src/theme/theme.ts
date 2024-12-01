@@ -29,6 +29,8 @@ export const useTheme = () => {
       accent: primaryOrange,
       underline: isDarkMode ? primaryYellow : primaryOrange,
       disabled: primaryGrey,
+      yellow: primaryYellow,
+      orange: primaryOrange
     },
     breakpoints,
     typography: {
@@ -60,6 +62,7 @@ export const useTheme = () => {
       small: "4px",
       medium: "8px",
       large: "16px",
+      xLarge: "24px",
       round: "50%",
     },
     spacing: {
