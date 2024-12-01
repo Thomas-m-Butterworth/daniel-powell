@@ -45,6 +45,7 @@ export default function Contact() {
       <ContactForm 
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        status={status}
         formData={formData}
       />
     </PageContainer>
