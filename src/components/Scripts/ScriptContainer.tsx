@@ -29,9 +29,9 @@ export const ScriptContainer = ({imageSrc, imageAlt, key, href, title, content}:
         <ScriptContainerDiv key={key}>
             <SideImage src={imageSrc} alt={imageAlt} />
             <ScriptDescription>
-                <Link href={href}>
-                    <ScriptLinkItem>{title}</ScriptLinkItem>
-                </Link>
+            <Link href={href}>
+                <ScriptLinkItem>{title}</ScriptLinkItem>
+            </Link>
             <ScriptLinkDescription dangerouslySetInnerHTML={{__html: content}} />
             </ScriptDescription>
         </ScriptContainerDiv>

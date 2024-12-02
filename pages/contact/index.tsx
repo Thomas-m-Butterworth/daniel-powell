@@ -33,8 +33,7 @@ export default function Contact() {
     } catch (error) {
       setStatus('Error sending message.');
     }
-    setTimeout(setStatus, 3000, '' )
-    // setStatus('');
+    setTimeout(setStatus, 3000, '')
   };
 
   return (

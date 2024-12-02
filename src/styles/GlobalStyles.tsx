@@ -279,7 +279,11 @@ export const GigYear = styled.h5`
 interface CopyTextProps {
   type?: string;
 }
-export const P = styled.p``;
+export const P = styled.p`
+  margin-bottom: ${({ theme }) => theme.spacing.xs};
+  letter-spacing: 0.35px;
+  text-align: justify;
+`;
 
 export const CopyText = styled.p<CopyTextProps>`
   color: ${({ theme }) => theme.colors.text};

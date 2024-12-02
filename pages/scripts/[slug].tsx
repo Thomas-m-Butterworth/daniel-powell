@@ -1,14 +1,16 @@
 import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api";
-import { PageContent } from "../../src/styles/GlobalStyles";
+import { P, PageContent } from "../../src/styles/GlobalStyles";
 import { PostProps } from "../../src/types/BlogTypes";
 import styled, { keyframes } from "styled-components";
 import BackArrowIcon from "@images/icons/BackArrow";
 import { primary } from "@utils";
 import { useEffect, useRef, useState } from "react";
+import { copy } from "@lang";
+import { Button } from "@components";
 
-const { primaryOrange, primaryBlack, primaryOffWhite } = primary;
+const { primaryOrange, primaryOffWhite } = primary;
 
 interface ProgressBarProps {
   progress: number;
@@ -29,7 +31,6 @@ const PageTitle = styled.div`
   margin-bottom: 8px;
   width: 100%;
   padding-bottom: 4px;
-  background-color: ${primaryOffWhite};
 `;
 
 const IconWrapper = styled.div`
@@ -49,7 +50,16 @@ const PageTitleText = styled.h3`
 
 const ScriptContent = styled.div`
   overflow-y: scroll;
-  height: 400px;
+  height: 55vh;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
+`;
+
+const ScriptPreview = styled.div`
+  background-color: ${({ theme }) => theme.colors.white};
+  border: solid 1px ${({ theme }) => theme.colors.text};
+  padding: ${({ theme }) => theme.spacing.md};
+  padding-top: ${({ theme }) => theme.spacing.lg};
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
 `;
 
 const ProgressBar = styled.div.attrs<ProgressBarProps>(({ progress }) => ({
@@ -97,25 +107,29 @@ export default function Post({ post, posts, preview }: PostProps) {
   }
 
   return (
-    <div>
-      {router.isFallback ? (
-        <h3>Loading…</h3>
-      ) : (
-        <PageContent>
-          <PageTitle>
-            <IconWrapper onClick={() => router.back()}>
-              <BackArrowIcon hoverColor={primaryOrange} />
-            </IconWrapper>
-            <PageTitleText>{post.title}</PageTitleText>
-            <ProgressBar progress={scrollProgress} />
-          </PageTitle>
-          <ScriptContent
-            ref={scriptContentRef}
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
-        </PageContent>
-      )}
-    </div>
+      <div>
+        {router.isFallback ? (
+          <h3>Loading…</h3>
+        ) : (
+          <PageContent>
+            <ScriptPreview>
+              <PageTitle>
+                <IconWrapper onClick={() => router.back()}>
+                  <BackArrowIcon hoverColor={primaryOrange} />
+                </IconWrapper>
+                <PageTitleText>{post.title}</PageTitleText>
+                <ProgressBar progress={scrollProgress} />
+              </PageTitle>
+              <ScriptContent
+                ref={scriptContentRef}
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
+            </ScriptPreview>
+              <P dangerouslySetInnerHTML={{ __html: copy.scripts.cta }} />
+              <Button buttonStyle="tertiary" onClick={() => router.push('/contact')}>Get in Touch</Button>
+          </PageContent>
+        )}
+      </div>
   );
 }
 
