@@ -40,7 +40,7 @@ export const Input = styled.input`
 `;
 
 export const TextArea = styled.textarea`
-    padding-top: 0.25rem;
+    padding-top: 0.5rem;
     padding-bottom: 0.25rem;
     padding-left: 0.5rem;
     border-radius: ${({ theme }) => theme.borderRadii.medium};
