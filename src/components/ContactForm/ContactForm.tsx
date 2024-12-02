@@ -8,6 +8,7 @@ const ContactFormContainer = styled.div<{width?: string;}>`
     width: ${( props ) => (props.width ? props.width : "100%")};
     align-items: center;
     font-family: ${({ theme }) => theme.typography.fonts.primaryFont};
+    padding: ${({ theme }) => theme.spacing.xs};
 `;
 
 export const FormInput = styled.div`
@@ -21,6 +22,7 @@ export const Form = styled.form`
 `;
 
 export const Label = styled.label`
+    margin-bottom: ${({ theme }) => theme.spacing.xs};
 `;
 
 export const Input = styled.input`
@@ -29,10 +31,12 @@ export const Input = styled.input`
     padding-left: 1rem;
     border-radius: ${({ theme }) => theme.borderRadii.medium};
     border: solid 1px;
-    height: 1.75rem;
+    height: 2rem;
     color: ${({ theme }) => theme.colors.text};
     border-color: ${({ theme }) => theme.colors.text};
-    background-color: ${({ theme }) => theme.colors.textInverted};
+    background-color: ${({ theme }) => theme.colors.white};
+    margin-bottom: ${({ theme }) => theme.spacing.xs};
+    font-family: ${({ theme }) => theme.typography.fonts.primaryFont};
 `;
 
 export const TextArea = styled.textarea`
@@ -44,7 +48,8 @@ export const TextArea = styled.textarea`
     height: 7rem;
     color: ${({ theme }) => theme.colors.text};
     border-color: ${({ theme }) => theme.colors.text};
-    background-color: ${({ theme }) => theme.colors.textInverted};
+    background-color: ${({ theme }) => theme.colors.white};
+    font-family: ${({ theme }) => theme.typography.fonts.primaryFont};
 `;
 
 interface FormDataType {

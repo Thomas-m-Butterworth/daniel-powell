@@ -30,7 +30,8 @@ export const useTheme = () => {
       underline: isDarkMode ? primaryYellow : primaryOrange,
       disabled: primaryGrey,
       yellow: primaryYellow,
-      orange: primaryOrange
+      orange: primaryOrange,
+      white: isDarkMode ? primaryBlack : "#FFFFFF"
     },
     breakpoints,
     typography: {
