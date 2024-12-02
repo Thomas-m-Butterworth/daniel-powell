@@ -20,6 +20,7 @@ declare module "styled-components" {
       disabled: string;
       yellow: string;
       orange: string;
+      white: string;
     };
     breakpoints: {
       xs: string;
