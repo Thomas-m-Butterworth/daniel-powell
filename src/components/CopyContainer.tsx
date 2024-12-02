@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import { CopyAndTitle, CopyTitleText } from "./AboutDan";
+import { P } from "@styles/GlobalStyles";
 
 interface CopyContainerProps {
     title: string;
@@ -12,7 +13,7 @@ export const CopyContainer = ({ title, copy, cta, children}: CopyContainerProps)
     return (
         <CopyAndTitle>
             <CopyTitleText>{title}</CopyTitleText>
-            <p
+            <P
                 dangerouslySetInnerHTML={{
                     __html: copy.replace(/\n/g, '<br />'),
                 }}

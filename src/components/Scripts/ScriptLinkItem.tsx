@@ -24,4 +24,5 @@ export const ScriptLinkItem = styled.li`
 
 export const ScriptLinkDescription = styled.div`
   text-align: justify;
+  letter-spacing: 0.35px;
 `

@@ -221,6 +221,9 @@ h5 {
 p {
     font-size: ${({ theme }) => theme.typography.scale.paragraph};
     font-family: ${({ theme }) => theme.typography.fonts.primaryFont};
+    letter-spacing: 0.35px;
+    text-align: justify;
+    margin-bottom: ${({ theme }) => theme.spacing.xs};
 }
 .helper {
     font-size: ${({ theme }) => theme.typography.scale.helperText};
@@ -280,9 +283,6 @@ interface CopyTextProps {
   type?: string;
 }
 export const P = styled.p`
-  margin-bottom: ${({ theme }) => theme.spacing.xs};
-  letter-spacing: 0.35px;
-  text-align: justify;
 `;
 
 export const CopyText = styled.p<CopyTextProps>`
