@@ -1,7 +1,3 @@
-import Head from 'next/head'
-import { PageContent } from '../../src/styles/GlobalStyles'
-
-import nodemailer from "nodemailer";
 import { useState } from 'react';
 import { ContactForm, CopyContainer, PageContainer } from '@components';
 import { copy, meta } from '@lang';
@@ -17,7 +13,7 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('Sending...');
+    setStatus('Sending Message');
 
     try {
       const res = await fetch('/api/contact', {
@@ -29,14 +25,16 @@ export default function Contact() {
       });
 
       if (res.ok) {
-        setStatus('Message sent successfully!');
+        setStatus('Message Sent!');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setStatus('Failed to send message.');
+        setStatus('Error Sending Message');
       }
     } catch (error) {
       setStatus('Error sending message.');
     }
+    setTimeout(setStatus, 3000, '' )
+    // setStatus('');
   };
 
   return (
