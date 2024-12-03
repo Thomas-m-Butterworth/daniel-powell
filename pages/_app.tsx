@@ -23,17 +23,18 @@ function MyApp({ Component, pageProps }: AppProps) {
   const theme = useTheme();
   return (
     <ThemeProvider theme={theme}>
-      <AppContainer aria-hidden={false}>
       <UniversalStyle />
       <TextStyles />
       <WordpressStyles />
-        <Head>
-          <title>{metadata.title}</title>
-          <meta name={metadata.title} content={metadata.description} />
-          <link rel="icon" href="/favicon.ico" sizes="any" />
-        </Head>
-          <NavBar />
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name={metadata.title} content={metadata.description} />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </Head>
+      <body>
+        <AppContainer aria-hidden={false}>
           <SpeedInsights />
+          <NavBar />
           <Container>
             <Component {...pageProps} />
           </Container>
@@ -43,7 +44,8 @@ function MyApp({ Component, pageProps }: AppProps) {
               Web design & development by Thomas Butterworth
             </P>
           </Footer>
-      </AppContainer>
+        </AppContainer>
+      </body>
     </ThemeProvider>
   );
 }
