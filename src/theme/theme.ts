@@ -18,7 +18,7 @@ export const useTheme = () => {
       nav: {
             bg: isDarkMode ? primaryGrey : primaryBlack,
             siteTitle: isDarkMode ? primaryBlack : primaryOrange,
-            linkHover: primaryOrange
+            linkHover: isDarkMode ? primaryOffWhite : primaryOrange
         },
       footer: { 
           bg: isDarkMode ? primaryGrey : primaryBlack,

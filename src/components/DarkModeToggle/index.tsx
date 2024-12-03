@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 
 const ToggleContainer = styled.div<{ isOn: boolean }>`
-  width: 20px;
+  width: 25px;
   height: 50px;
   background-color: ${(props) =>
     props.isOn ? primary.primaryBlack : primary.primaryGrey};
@@ -23,12 +23,12 @@ const ToggleContainer = styled.div<{ isOn: boolean }>`
 const ToggleButton = styled.div<{ isOn: boolean }>`
   width: 12px;
   height: 12px;
-  margin-top: 3px;
+  margin-top: 5px;
   border-radius: 50%;
   background-color: ${(props) =>
     props.isOn ? primary.primaryGrey : primary.primaryBlack};
   transition: transform 0.8s ease;
-  transform: translateY(${(props) => (props.isOn ? "27px" : "0")});
+  transform: translateY(${(props) => (props.isOn ? "23px" : "0")});
 `;
 
 export const DarkModeToggle: React.FC = () => {

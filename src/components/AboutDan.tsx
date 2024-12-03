@@ -19,6 +19,7 @@ const ImageContainer = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing.md};
   ${({ theme }) => theme.media.md} {
     width: 100%;
+    margin-right: 0;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
@@ -33,14 +34,16 @@ const ResponsiveImageWrapper = styled.div`
 
   ${({ theme }) => theme.media.md} {
     width: 100%;
+    max-width: 486px;
     height: 100px;
+    justify-self: center;
   }
 `;
 
 const ContentImage = styled(Image)`
   object-fit: cover;
   ${({ theme }) => theme.media.md} {
-    object-position: 0px -120px;
+    object-position: 0px -100px;
     transform: scale(1.8);
   }
   ${({ theme }) => theme.media.sm} {
@@ -67,7 +70,7 @@ export const AboutDan = () => {
             placeholder="empty"
             fill
             priority
-            sizes={`(max-width: ${breakpoints.lg}) 80vw, 120px`}
+            sizes={`(max-width: ${breakpoints.md}) 80vw, 120px`}
           />
         </ResponsiveImageWrapper>
       </ImageContainer>
