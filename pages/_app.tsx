@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Head>
           <title>{metadata.title}</title>
           <meta name={metadata.title} content={metadata.description} />
-          <link rel="icon" href="../app/favicon.ico" />
+          <link rel="icon" href="/favicon.ico" sizes="any" />
         </Head>
         <NavBar />
         <Container>
