@@ -1,8 +1,10 @@
 import { ImageAndCopy } from "@styles/GlobalStyles";
 import danMic from "@images/danMic.png";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { copy } from "@lang";
 import { CopyContainer } from "@components";
+import Image from "next/image";
+import { breakpoints } from "@utils";
 
 export const CopyTitleText = styled.h2`
   text-transform: uppercase;
@@ -13,18 +15,36 @@ export const CopyTitleText = styled.h2`
 `;
 
 const ImageContainer = styled.div`
-  width: 250px;
-  display: flex;
-  flex-direction: column-reverse;
-  margin-right: 0.8rem;
-  margin-bottom: 0.8rem;
-
-  ${({ theme }) => theme.media.lg} {
+  margin-right: ${({ theme }) => theme.spacing.md};
+  margin-bottom: ${({ theme }) => theme.spacing.md};
+  ${({ theme }) => theme.media.md} {
     width: 100%;
     justify-content: space-between;
-    flex-direction: row;
     align-items: center;
     overflow: hidden;
+  }
+`;
+
+const ResponsiveImageWrapper = styled.div`
+  position: relative;
+  width: 10vw;
+  height: 100%;
+  overflow: hidden;
+
+  ${({ theme }) => theme.media.md} {
+    width: 100%;
+    height: 100px;
+  }
+`;
+
+const ContentImage = styled(Image)`
+  object-fit: cover;
+  ${({ theme }) => theme.media.md} {
+    object-position: 0px -120px;
+    transform: scale(1.8);
+  }
+  ${({ theme }) => theme.media.sm} {
+    object-position: 0px -50px;
   }
 `;
 
@@ -36,33 +56,20 @@ export const CopyAndTitle = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing.sm};
 `
 
-const ContentImage = styled.img<{ height?: string; width?: string, position?: string }>`
-  width: 250px;
-  height: ${(props) => (props.height ? props.height : "100%")};
-  width: ${(props) => (props.width ? props.width : "100%")};
-  object-fit: cover;
-  object-position: ${(props) => (props.position ? props.position : null)};
-
-  ${({ theme }) => theme.media.lg} {
-    width: 100%;
-    height: 100px;
-    object-position: 0px -120px;
-    transform: scale(1.8);
-  }
-  ${({ theme }) => theme.media.sm} {
-    width: 100%;
-    object-position: 0px -30px;
-  }
-  ${({ theme }) => theme.media.xs} {
-    width: 100%;
-  }
-`;
-
 export const AboutDan = () => {
   return (
     <ImageAndCopy>
       <ImageContainer>
-        <ContentImage src={danMic.src} width="10vw" alt="An illustration by Robert Maltby of Dan holding a microphone" />
+        <ResponsiveImageWrapper>
+          <ContentImage 
+            src={danMic} 
+            alt="An illustration by Robert Maltby of Dan holding a microphone" 
+            placeholder="empty"
+            fill
+            priority
+            sizes={`(max-width: ${breakpoints.lg}) 80vw, 120px`}
+          />
+        </ResponsiveImageWrapper>
       </ImageContainer>
       <CopyContainer title={copy.home.title} copy={copy.test.loremIpsum} />
     </ImageAndCopy>

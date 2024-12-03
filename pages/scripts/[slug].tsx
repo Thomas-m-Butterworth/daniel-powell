@@ -9,6 +9,7 @@ import { primary } from "@utils";
 import { useEffect, useRef, useState } from "react";
 import { copy } from "@lang";
 import { Button } from "@components";
+import { sanitize } from "isomorphic-dompurify";
 
 const { primaryOrange, primaryOffWhite } = primary;
 
@@ -122,7 +123,7 @@ export default function Post({ post, posts, preview }: PostProps) {
               </PageTitle>
               <ScriptContent
                 ref={scriptContentRef}
-                dangerouslySetInnerHTML={{ __html: post.content }}
+                dangerouslySetInnerHTML={{ __html: sanitize(post.content) }}
               />
             </ScriptPreview>
               <P dangerouslySetInnerHTML={{ __html: copy.scripts.cta }} />

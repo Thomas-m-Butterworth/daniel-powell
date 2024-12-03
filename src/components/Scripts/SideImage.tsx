@@ -1,8 +1,7 @@
+import Image from "next/image";
 import styled from "styled-components";
 
-export const SideImage = styled.img`
-  width: 112px;
-  height: auto;
+export const SideImage = styled(Image)`
   object-fit: cover;
   padding-right: 1rem;
 

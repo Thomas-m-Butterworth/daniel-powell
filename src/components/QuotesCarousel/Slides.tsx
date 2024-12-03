@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { SlideProps, SlidesProps } from "./types";
 import { AccoladeText, QuoteText } from "@styles/GlobalStyles";
 import { addLineBreak } from "@utils";
+import { sanitize } from "isomorphic-dompurify";
 
 const SlideContainer = styled.div<{ offset: number }>`
   display: flex;
@@ -19,10 +20,12 @@ const SlideDiv = styled.div`
 `;
 
 const Slide = ({quote}: SlideProps) => {
+ const sanitizedQuote = sanitize(addLineBreak(quote.accolade))
+ const sanitizedSource = sanitize(addLineBreak(quote.source))
   return (
     <SlideDiv>
-        <QuoteText dangerouslySetInnerHTML={{__html: addLineBreak(quote.accolade)}}/>
-        <AccoladeText dangerouslySetInnerHTML={{__html: addLineBreak(quote.source)}} />
+        <QuoteText dangerouslySetInnerHTML={{__html: sanitizedQuote}}/>
+        <AccoladeText dangerouslySetInnerHTML={{__html: sanitizedSource}} />
     </SlideDiv>
 )};
 

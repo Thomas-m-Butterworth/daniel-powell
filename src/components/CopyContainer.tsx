@@ -1,5 +1,7 @@
 import React, { ReactNode } from "react";
 import { CopyAndTitle, CopyTitleText } from "./AboutDan";
+import { sanitize } from 'isomorphic-dompurify';
+
 import { addLineBreak } from "@utils";
 
 interface CopyContainerProps {
@@ -10,12 +12,13 @@ interface CopyContainerProps {
 }
 
 export const CopyContainer = ({ title, copy, cta, children}: CopyContainerProps) => {
+    const sanitizedCopy = sanitize(addLineBreak(copy));
     return (
         <CopyAndTitle>
             <CopyTitleText>{title}</CopyTitleText>
             <p
                 dangerouslySetInnerHTML={{
-                    __html: addLineBreak(copy),
+                    __html: sanitizedCopy,
                 }}
             />
         </CopyAndTitle>

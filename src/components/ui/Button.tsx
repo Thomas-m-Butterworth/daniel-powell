@@ -65,6 +65,20 @@ const styleVariants = {
     border: solid 3px;
     border-color: ${({ theme }) => theme.colors.text};
     color: ${({ theme }) => theme.colors.text};
+    &:hover {
+        background-color: ${({ theme }) => theme.colors.text};
+        color: ${({ theme }) => theme.colors.textInverted};
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+        &:focus {
+            filter: none;
+        }
+        &:active {
+        }
+        &:disabled {
+            background-color: ${({ theme }) => theme.colors.disabled};
+            border: none;
+        }
   `,
 };
 

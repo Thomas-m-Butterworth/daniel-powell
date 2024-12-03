@@ -21,11 +21,12 @@ export const Container = styled.div`
   }
 `;
 
-export const PageContent = styled(Container)`
+export const PageContent = styled(Container)<{justify?: string}>`
   margin: auto;
   position: block;
   width: 66%;
   align-items: center;
+  justify-content: ${(props) => props.justify ? "space-between" : null};
   margin-top: 1rem;
   margin-bottom: 1rem;
   ${({ theme }) => theme.media.md} {
@@ -39,7 +40,7 @@ export const ImageAndCopy = styled.div`
   padding-bottom: 1rem;
   justify-content: space-between;
 
-  ${({ theme }) => theme.media.lg} {
+  ${({ theme }) => theme.media.md} {
     flex-direction: column;
   }
 `;
@@ -69,6 +70,7 @@ export const Footer = styled.div`
   padding-right: 2rem;
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
+  margin-top: ${({ theme }) => theme.spacing.md};
   justify-content: center;
   align-items: start;
   background: ${({ theme }) => theme.colors.footer.bg};

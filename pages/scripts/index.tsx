@@ -28,7 +28,6 @@ export default function Scripts({ allPosts: { edges } }) {
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const allPosts = await getAllScripts(preview)
-
   return {
     props: { allPosts, preview },
     revalidate: 10,
