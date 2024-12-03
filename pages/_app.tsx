@@ -1,6 +1,5 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import {
   AppContainer,
   Container,
@@ -31,9 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name={metadata.title} content={metadata.description} />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
-      <body>
         <AppContainer aria-hidden={false}>
-          <SpeedInsights />
           <NavBar />
           <Container>
             <Component {...pageProps} />
@@ -45,7 +42,6 @@ function MyApp({ Component, pageProps }: AppProps) {
             </P>
           </Footer>
         </AppContainer>
-      </body>
     </ThemeProvider>
   );
 }
