@@ -1,5 +1,6 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import {
   AppContainer,
   Container,
@@ -31,16 +32,17 @@ function MyApp({ Component, pageProps }: AppProps) {
           <meta name={metadata.title} content={metadata.description} />
           <link rel="icon" href="/favicon.ico" sizes="any" />
         </Head>
-        <NavBar />
-        <Container>
-          <Component {...pageProps} />
-        </Container>
-        <Footer>
-          <P className="copyright">&copy; Daniel Powell</P>
-          <P className="copyright">
-            Web design & development by Thomas Butterworth
-          </P>
-        </Footer>
+          <NavBar />
+          <SpeedInsights />
+          <Container>
+            <Component {...pageProps} />
+          </Container>
+          <Footer>
+            <P className="copyright">&copy; Daniel Powell</P>
+            <P className="copyright">
+              Web design & development by Thomas Butterworth
+            </P>
+          </Footer>
       </AppContainer>
     </ThemeProvider>
   );
