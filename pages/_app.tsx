@@ -23,9 +23,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <AppContainer aria-hidden={false}>
-        <UniversalStyle />
-        <TextStyles />
-        <WordpressStyles />
+      <UniversalStyle />
+      <TextStyles />
+      <WordpressStyles />
         <Head>
           <title>{metadata.title}</title>
           <meta name={metadata.title} content={metadata.description} />

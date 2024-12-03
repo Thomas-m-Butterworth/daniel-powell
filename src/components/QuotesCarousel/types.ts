@@ -1,4 +1,5 @@
 export interface Quote {
+    id: string;
     accolade: string;
     source: string;
 };
@@ -11,7 +12,7 @@ export interface DotsProps {
 
 export interface SlideProps {
     quote: Quote;
-    key: number | string;
+    // slideKey: string;
 };
 
 export interface SlidesProps {

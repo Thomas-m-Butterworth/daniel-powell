@@ -217,13 +217,13 @@ h4 {
 h5 {
     font-size: ${({ theme }) => theme.typography.scale.h5};
     font-family: ${({ theme }) => theme.typography.fonts.genericHeader};
+    letter-spacing: 0.5px;
 }
 p {
     font-size: ${({ theme }) => theme.typography.scale.paragraph};
     font-family: ${({ theme }) => theme.typography.fonts.primaryFont};
     letter-spacing: 0.35px;
     text-align: justify;
-    margin-bottom: ${({ theme }) => theme.spacing.xs};
 }
 .helper {
     font-size: ${({ theme }) => theme.typography.scale.helperText};
@@ -249,12 +249,12 @@ font-family: ${({ theme }) => theme.typography.fonts.genericHeader};
 margin-top: ${({ theme }) => theme.spacing.lg};
 `;
 
-export const QuoteText = styled.h4`
+export const QuoteText = styled.h5`
   color: ${({ theme }) => theme.colors.text};
   font-family: ${({ theme }) => theme.typography.fonts.scriptFont};
-  margin-bottom: ${({ theme }) => theme.spacing.xs};
-  letter-spacing: 0.5px;
+  letter-spacing: 0.35px;
   line-height: 20px;
+  text-align: center;
 
   ${({ theme }) => theme.media.md} {
     font-size: ${({ theme }) => theme.typography.scale.h5};
@@ -266,6 +266,7 @@ export const AccoladeText = styled.p`
   color: ${({ theme }) => theme.colors.text};
   font-family: ${({ theme }) => theme.typography.fonts.primaryFont};
   letter-spacing: 0.15px;
+  text-align: center;
   
   ${({ theme }) => theme.media.md} {
     font-size: ${({ theme }) => theme.typography.scale.helperText};

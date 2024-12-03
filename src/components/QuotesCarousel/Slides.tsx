@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { SlideProps, SlidesProps } from "./types";
 import { AccoladeText, QuoteText } from "@styles/GlobalStyles";
+import { addLineBreak } from "@utils/utils";
 
 const SlideContainer = styled.div<{ offset: number }>`
   display: flex;
@@ -13,27 +14,23 @@ const SlideDiv = styled.div`
   text-align: center;
   margin-top: auto;
   margin-bottom: auto;
-  padding-left: 35px;
-  padding-right: 35px;
+  padding-left: 50px;
+  padding-right: 50px;
 `;
 
-const SlideTitle = styled.h3`
-    ${({ theme }) => theme.media.md} {
-        font-size: ${({ theme }) => theme.typography.scale.h4};
-    }
-`
-
-const Slide = ({quote, key}: SlideProps) => (
-    <SlideDiv key={key}>
-        <QuoteText>{quote.accolade}</QuoteText>
-        <AccoladeText>{quote.source}</AccoladeText>
+const Slide = ({quote}: SlideProps) => {
+  return (
+    <SlideDiv>
+        <QuoteText dangerouslySetInnerHTML={{__html: addLineBreak(quote.accolade)}}/>
+        <AccoladeText dangerouslySetInnerHTML={{__html: addLineBreak(quote.source)}} />
     </SlideDiv>
-);
+)};
 
 export const Slides = ({quotes, currentSlideIndex}: SlidesProps) => (
     <SlideContainer offset={-currentSlideIndex * 100}>
-    {quotes.map((item, index) => (
-      <Slide quote={item} key={index}/>
-    ))}
+    {quotes.map((item, index) => {
+      return (
+      <Slide quote={item} key={`quote-slide-${index}`}/>
+    )})}
   </SlideContainer>
 );

@@ -34,10 +34,6 @@ const ToggleButton = styled.div<{ isOn: boolean }>`
 export const DarkModeToggle: React.FC = () => {
   const { isDarkMode, setDarkMode } = useDarkMode();
 
-  useEffect(() => {
-    console.log({ isDarkMode });
-  }, [isDarkMode]);
-
   const handleToggle = () => {
     setDarkMode(!isDarkMode);
   };

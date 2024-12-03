@@ -1,4 +1,3 @@
-import { Key } from "react";
 import Link from 'next/link'
 import styled from "styled-components";
 import { SideImage } from "./SideImage";
@@ -8,7 +7,6 @@ interface ScriptContainerProps {
     imageSrc: string;
     imageAlt: string;
     href: string;
-    key: Key;
     title: string;
     content: string | TrustedHTML;
 };
@@ -24,9 +22,9 @@ const ScriptDescription = styled.div`
         flex-direction: column;
 `
 
-export const ScriptContainer = ({imageSrc, imageAlt, key, href, title, content}: ScriptContainerProps) => {
+export const ScriptContainer = ({imageSrc, imageAlt, href, title, content}: ScriptContainerProps) => {
     return (
-        <ScriptContainerDiv key={key}>
+        <ScriptContainerDiv>
             <SideImage src={imageSrc} alt={imageAlt} />
             <ScriptDescription>
             <Link href={href}>

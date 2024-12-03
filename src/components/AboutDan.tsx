@@ -3,7 +3,6 @@ import danMic from "@images/danMic.png";
 import styled from "styled-components";
 import { copy } from "@lang";
 import { CopyContainer } from "@components";
-import Image from "next/image";
 
 export const CopyTitleText = styled.h2`
   text-transform: uppercase;
@@ -34,7 +33,7 @@ export const CopyAndTitle = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: justify;
-  margin-bottom: ${({ theme }) => theme.spacing.lg};
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
 `
 
 const ContentImage = styled.img<{ height?: string; width?: string, position?: string }>`
