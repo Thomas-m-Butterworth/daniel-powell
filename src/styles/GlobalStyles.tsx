@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 
 export const AppContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
@@ -75,7 +75,7 @@ export const Footer = styled.div`
   color: ${({ theme }) => theme.colors.textInverted};
 `;
 
-export const WordpressStyles = createGlobalStyle`
+export const wordpressStyles = css`
 .has-text-align-left {
   text-align: left;
 }
@@ -188,7 +188,7 @@ export const WordpressStyles = createGlobalStyle`
 }
 `;
 
-export const TextStyles = createGlobalStyle`
+export const textStyles = css`
 h1 {
     font-size: ${({ theme }) => theme.typography.scale.h1};
     font-family: ${({ theme }) => theme.typography.fonts.genericHeader};
@@ -243,11 +243,6 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
 }
 `;
 
-export const TitleText =  styled.h2`
-color: ${({ theme }) => theme.colors.text};
-font-family: ${({ theme }) => theme.typography.fonts.genericHeader};
-margin-top: ${({ theme }) => theme.spacing.lg};
-`;
 
 export const QuoteText = styled.h5`
   color: ${({ theme }) => theme.colors.text};
@@ -273,55 +268,18 @@ export const AccoladeText = styled.p`
   }
 `;
 
-export const GigYear = styled.h5`
-  color: ${({ theme }) => theme.colors.text};
-  font-family: ${({ theme }) => theme.typography.fonts.genericHeader};
-  letter-spacing: -1px;
-  line-height: 20px;
-`;
-
-interface CopyTextProps {
-  type?: string;
-}
 export const P = styled.p`
 `;
 
-export const CopyText = styled.p<CopyTextProps>`
-  color: ${({ theme }) => theme.colors.text};
-  margin-top: ${(props) => (props.type === "press" ? "0.2rem" : "0.5rem")};
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.1rem;
-  line-height: 1em;
-  align-self: center;
-  text-align: "left";
-
-  ${({ theme }) => theme.media.lg} {
-    text-align: center;
-  }
-`;
-
-export const BlogText = styled.p<CopyTextProps>`
-  color: ${({ theme }) => theme.colors.text};
-  margin-top: ${(props) => (props.type === "press" ? "0.2rem" : "0.5rem")};
-  margin-bottom: 0.5rem;
-  line-height: 1em;
-  align-self: center;
-  text-align: left;
-`;
-
-export const QuoteCredit = styled.p`
-  color: ${({ theme }) => theme.colors.text};
-  margin-top: 0.1rem;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.1rem;
-  line-height: 1em;
-  align-self: center;
-  text-align: "center";
-`;
-
-export const UniversalStyle = createGlobalStyle`
+export const universalStyles = css`
 *,*::after, *::before{
     box-sizing: border-box;
     margin: 0;
 }
+`;
+
+export const GlobalStyles = createGlobalStyle`
+  ${universalStyles}
+  ${textStyles}
+  ${wordpressStyles}
 `;

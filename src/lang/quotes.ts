@@ -13,8 +13,8 @@ export const quotes: Quote[] = [
     },
     {
       id: '003',
-      accolade: "Best Jokes of the Fringe List",
-      source: "The Telegraph (2023)",
+      accolade: "Best Jokes of the 2023 Fringe",
+      source: "The Telegraph",
     },
     {
       id: '004',
@@ -56,8 +56,8 @@ export const quotes: Quote[] = [
     },
     {
       id: '011',
-      accolade: `Writer
+      accolade: `Writer`,
+      source: `Breaking The News (BBC)
       (Additional Material)`,
-      source: "Breaking The News (BBC)",
     },
   ];

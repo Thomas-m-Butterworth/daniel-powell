@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { SlideProps, SlidesProps } from "./types";
 import { AccoladeText, QuoteText } from "@styles/GlobalStyles";
-import { addLineBreak } from "@utils/utils";
+import { addLineBreak } from "@utils";
 
 const SlideContainer = styled.div<{ offset: number }>`
   display: flex;

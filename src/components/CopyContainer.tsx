@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { CopyAndTitle, CopyTitleText } from "./AboutDan";
-import { addLineBreak } from "@utils/utils";
+import { addLineBreak } from "@utils";
 
 interface CopyContainerProps {
     title: string;

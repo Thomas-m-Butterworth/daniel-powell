@@ -1,35 +1,25 @@
 import { AppProps } from "next/app";
-import Head from "next/head";
 import {
   AppContainer,
   Container,
   Footer,
+  GlobalStyles,
   P,
-  TextStyles,
-  UniversalStyle,
-  WordpressStyles,
 } from "../src/styles/GlobalStyles";
 import { NavBar } from "../src/components/NavBar/NavBar";
 import { useTheme } from "@theme/theme";
 import { ThemeProvider } from "styled-components";
-
-const metadata = {
-  title: "Daniel Powell",
-  description: `Daniel Powell - Writer, comedian, wierdo.`,
-};
+import Head from "next/head";
+import { meta } from "@lang";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const theme = useTheme();
   return (
     <ThemeProvider theme={theme}>
-      <UniversalStyle />
-      <TextStyles />
-      <WordpressStyles />
+      <GlobalStyles />
       <Head>
-        <title>{metadata.title}</title>
-        <meta name={metadata.title} content={metadata.description} />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </Head>
+        <title>{meta.main.title}</title>
+      </Head> 
         <AppContainer aria-hidden={false}>
           <NavBar />
           <Container>

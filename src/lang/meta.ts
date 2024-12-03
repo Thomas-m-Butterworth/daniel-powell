@@ -9,5 +9,9 @@ export const meta = {
         contact: {
             head: "Contact Daniel Powell"
         },
-    }
+    },
+    main: {
+        title: "Daniel Powell",
+        description: `Daniel Powell - Writer, comedian, wierdo.`,
+      },
 }
