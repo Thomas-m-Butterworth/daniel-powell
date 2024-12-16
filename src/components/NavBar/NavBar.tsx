@@ -48,7 +48,7 @@ export const NavBar = () => {
             <NavContent>
                 <Link href="/" style={{ textDecoration: 'none' }}>
                     <SiteTitle>Daniel Powell</SiteTitle>
-                    <SiteSubtitle>writer | comedian | twat</SiteSubtitle>
+                    <SiteSubtitle>writer | comedian | performer</SiteSubtitle>
                 </Link>
                 <NavLinkContainer>
                 <NavLinks>
